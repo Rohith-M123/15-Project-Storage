@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+         https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>ErrorPageDemo</display-name>
+
+    <!-- Servlet -->
+    <servlet>
+        <servlet-name>ErrorDemoServlet</servlet-name>
+        <servlet-class>com.example.ErrorDemoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ErrorDemoServlet</servlet-name>
+        <url-pattern>/errorTest</url-pattern>
+    </servlet-mapping>
+
+    <!-- Custom Error Pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error500.html</location>
+    </error-page>
+
+</web-app>
